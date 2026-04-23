@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(){
+long shell = 0x4203f2c0;
+
+while(memcmp((void *)shell, "/bin/sh", 8)) {
+++shell;
+}
+
+printf("/bin/sh = %p\n", shell);
+}
