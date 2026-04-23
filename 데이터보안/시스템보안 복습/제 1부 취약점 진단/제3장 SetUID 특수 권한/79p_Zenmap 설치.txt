@@ -1,0 +1,26 @@
+ 1) Zenmap 설치
+
+[root@kali:~/nmapscan]# wget -q https://nmap.org/dist/zenmap-7.93-1.noarch.rpm
+
+[root@kali:~/nmapscan]# apt-get update
+[root@kali:~/nmapscan]# apt install alien -y  
+[root@kali:~/nmapscan]# alien zenmap-7.93-1.noarch.rpm
+[root@kali:~/nmapscan]# dpkg -i zenmap_7.93-2_all.deb 
+
+[root@kali:~/nmapscan]# wget -q \
+http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-5.1ubuntu2_amd64.deb
+
+[root@kali:~/nmapscan]# wget -q \
+http://azure.archive.ubuntu.com\
+/ubuntu/pool/universe/p/pygobject-2/python-gobject-2_2.28.6-14ubuntu1_amd64.deb
+
+[root@kali:~/nmapscan]# wget -q \
+http://security.ubuntu.com/ubuntu/pool/universe/p/pycairo/python-cairo_1.16.2-2ubuntu2_amd64.deb
+
+[root@kali:~/nmapscan]# dpkg -i python-gobject-2_2.28.6-14ubuntu1_amd64.deb 
+[root@kali:~/nmapscan]# dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb
+[root@kali:~/nmapscan]# dpkg -i python-gtk2_2.24.0-5.1ubuntu2_amd64.deb 
+
+[root@kali:~/nmapscan]# rm -rf *.deb *.rpm 
+
+[root@kali:~/nmapscan]# cd
