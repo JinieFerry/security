@@ -1,0 +1,4 @@
+(python -c 'print("date")') | /bin/bash
+
+
+(python -c 'print("date")' ; cat) | /bin/bash

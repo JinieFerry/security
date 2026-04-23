@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+main()
+{
+FILE *wfp = fopen("output.txt", "w");
+fprintf(wfp, "%p\n", getenv("SUPERDK"));
+printf(" Address= %p\n", getenv("SUPERDK"));
+}
