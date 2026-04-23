@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int add(int a, int b)
+{
+int x = a , y = b;
+return (x + y);
+}
+
+int main(int argc, char* argv[])
+{
+int a = 6 , b = 2;
+printf("%d\n", add(a, b));
+return 0;
+}
