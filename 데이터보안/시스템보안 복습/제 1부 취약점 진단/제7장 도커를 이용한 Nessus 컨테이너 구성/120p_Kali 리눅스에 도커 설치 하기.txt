@@ -1,0 +1,12 @@
+ 1) 'docker.sh' 스크립트 파일 다운로드
+
+[root@kali: ~]# mkdir -p docker && cd docker
+[root@kali: ~/docker]# wget -q https://raw.githubusercontent.com/ncs10322/security/main/docker.sh 
+
+[root@kali: ~/docker]# ls -l docker.sh 
+-rw-r--r-- 1 root root 1910  2월 26 15:45 docker.sh
+
+
+ 2) 'docker.sh' 스크립트 파일을 이용한 도커 설치
+
+[root@kali: ~/docker]# sh docker.sh

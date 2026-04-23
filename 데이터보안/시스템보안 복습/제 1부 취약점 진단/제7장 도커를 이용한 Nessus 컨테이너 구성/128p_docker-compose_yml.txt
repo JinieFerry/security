@@ -1,0 +1,50 @@
+version: "3.9"
+services:
+  nessus:
+    image: tenableofficial/nessus:10.6.3
+    restart: always
+    hostname: nessus
+    container_name: nessus
+    tty: true
+    privileged: true
+    user: root
+    environment:
+      USERNAME: admin
+      PASSWORD: toor
+      ACTIVATION_CODE: 코드입력
+    ports:
+      - "8834:8834"
+    networks:
+      net172:
+        ipv4_address: 172.16.1.100
+
+  centos:
+    image: dokken/centos-stream-9
+    restart: always
+    hostname: centos
+    container_name: centos
+    tty: true
+    privileged: true
+    user: root
+    networks:
+      net172:
+        ipv4_address: 172.16.1.101
+
+  debian:
+    image: tleemcjr/metasploitable2
+    restart: always
+    hostname: debian
+    container_name: debian
+    tty: true
+    privileged: true
+    user: root
+    networks:
+      net172:
+        ipv4_address: 172.16.1.102
+
+networks:
+  net172:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.1.0/24
