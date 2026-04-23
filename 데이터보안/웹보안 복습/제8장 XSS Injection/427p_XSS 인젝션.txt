@@ -1,0 +1,2 @@
+<script>alert("test1")</script>
+<script>alert(document.cookie)</script>
