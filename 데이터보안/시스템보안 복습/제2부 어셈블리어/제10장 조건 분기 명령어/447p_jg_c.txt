@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+int num1 = 6;
+int num2 = 2;
+
+if(num1<=num2) {
+printf("Do Not Jump\n");
+} else {
+printf("Jump\n");
+}
+return 0;
+}
