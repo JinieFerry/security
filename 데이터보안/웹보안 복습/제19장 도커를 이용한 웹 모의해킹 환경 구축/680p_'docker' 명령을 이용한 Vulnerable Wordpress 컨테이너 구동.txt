@@ -1,0 +1,1 @@
+docker container run -d --name wordpress -p 8004:80 -p 3306:3306 eystsen/vulnerablewordpress
