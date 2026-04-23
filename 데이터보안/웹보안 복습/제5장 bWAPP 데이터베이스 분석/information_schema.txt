@@ -1,0 +1,5 @@
+데이터베이스.테이블			컬럼			 
+
+information_schema.schemata		schema_name		
+information_schema.tables			table_schema,table_name
+information_schema.columns			table_schema,table_name,column_name
