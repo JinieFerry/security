@@ -1,0 +1,6 @@
+mkdir -p html
+
+
+wget -q \
+https://blog.kakaocdn.net/dn/u8pyw/btsd0nhwSX8/HddZVLl3cGjZNCSq24kVKk/tfile.html \
+-O /root/html/index.html
