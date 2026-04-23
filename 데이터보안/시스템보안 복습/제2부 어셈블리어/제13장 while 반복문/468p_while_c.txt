@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+int num1 = 0;
+while(num1<5) {
+printf("Loop Count = %d\n", num1);
+num1++;
+}
+return 0;
+}
