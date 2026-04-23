@@ -1,0 +1,15 @@
+admin
+administrator
+root
+msfadmin
+user1
+user2
+user01
+user02
+tomcat
+postgres
+mysql
+test
+tester
+ftpuser
+ftpusers
