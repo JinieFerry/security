@@ -1,0 +1,1 @@
+www.google.com ; cat /etc/passwd | head -3

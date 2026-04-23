@@ -1,0 +1,2 @@
+<!--#exec cmd="head -3 /etc/passwd" -->
+<!--#exec cmd="uname -a" -->

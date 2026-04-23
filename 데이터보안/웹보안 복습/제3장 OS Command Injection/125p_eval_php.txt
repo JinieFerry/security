@@ -1,0 +1,8 @@
+<?php
+echo "TEST1". '<br>';
+eval("echo \"TEST2\";"). '<br>';
+?>
+<br>
+<?php
+eval("echo \"TEST3\"; system('cat /etc/passwd | head -3');");
+?>
