@@ -1,0 +1,4 @@
+python -c 'import pty;pty.spawn("/bin/bash")'
+
+
+# kali-2021에 복붙
