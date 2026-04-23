@@ -1,0 +1,1 @@
+echo 'bWAPP에 관심을 가져주셔서 감사합니다!' > lang_kr.php

