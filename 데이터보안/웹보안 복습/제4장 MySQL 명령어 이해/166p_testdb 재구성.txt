@@ -1,0 +1,15 @@
+drop database testdb;
+create database testdb;
+use testdb;
+create table cisco (id int, login varchar(20), password varchar(40), username varchar(20), age int);
+create table security (id int, login varchar(20), password varchar(40), username varchar(20), age int);
+create table linux (id int, login varchar(20), password varchar(40), username varchar(20), age int);
+insert into cisco values('1', 'cisco1', 'cisco1111', 'kim jung woo', 23);
+insert into cisco values('2', 'cisco2', 'cisco2222', 'kim jung soo', 26); 
+insert into cisco values('3', 'cisco3', 'cisco3333', 'kim jung ah', 29);
+insert into linux values('1', 'linux1', md5('linux1111'), 'lee jung woo', 33);  
+insert into linux values('2', 'linux2', md5('linux2222'), 'lee jung soo', 36); 
+insert into linux values('3', 'linux3', md5('linux3333'), 'lee jung ah', 39);
+insert into security values('1', 'security1', sha('security11'), 'park jung woo', 43);  
+insert into security values('2', 'security2', sha('security22'), 'park jung soo', 46); 
+insert into security values('3', 'security3', sha('security33'), 'park jung ah', 49);
