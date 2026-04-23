@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+        setreuid(3010, 3010);
+        system("/bin/bash");
+        return 0;
+}
