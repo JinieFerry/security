@@ -1,0 +1,26 @@
+ 2) 사회 공학적 기법을 이용한 Reflected URL 유포
+
+ ① 브라우저 주소창에 마지막에 인젝션한 URL 주소를 복사한다.
+
+http://192.168.20.205/bWAPP/htmli_get.php?firstname=%3Cscript%3Ealert(%22test%22)%3C/script%3E&lastname=%3Cscript%3Ewindow.open(%22https://itbro.upaper.kr%22)%3C/script%3E&form=submit
+
+
+ ② 복사한 URL 주소를 URL 단축 사이트를 이용하여 URL 주소를 단축시킨다.
+
+https://bit.ly/3DyL4WC
+
+[참고] URL 단축 사이트
+
+https://bitly.com
+https://hyperhost.ua/tools/en/surli
+
+
+ ③ 실제 PC에서 네이버에 로그인한 다음에 '네이버 메일'로 이동하고 '내게쓰기'를 클릭하여 다음과 같은    
+    내용으로 본인 계정으로 이메일을 보낸다.
+
+제목 : 플레이스테이션5 무료 선착순 1000명 지급
+본문 :
+
+다음 링크를 클릭하여 신청하세요.
+
+https://bit.ly/3DyL4WC

