@@ -1,0 +1,5 @@
+# Path Traversal
+alert tcp any any -> $HOME_NET any (msg:"Path Traversal URI \../"; content:"../"; nocase; http_uri; sid:30000501; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"Path Traversal URI \/etc"; content:"/etc"; nocase; http_uri; sid:3000502; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"Path Traversal Body \../"; content:"../"; nocase; http_client_body; sid:3000503; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"Path Traversal Body \/etc"; content:"/etc"; nocase; http_client_body; sid:3000504; rev:1;)

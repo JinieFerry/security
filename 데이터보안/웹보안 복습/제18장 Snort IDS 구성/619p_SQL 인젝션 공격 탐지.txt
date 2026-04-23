@@ -1,0 +1,9 @@
+# SQL Injection
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection URI AND"; flow:established,to_server; content:"AND"; nocase; http_uri; sid:3000301; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection URI OR"; flow:established,to_server; content:"OR"; nocase; http_uri; sid:3000302; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection URI UNION"; flow:established,to_server; content:"UNION"; nocase; http_uri; sid:3000303; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection URI SELECT"; flow:established,to_server; content:"SELECT"; nocase; http_uri; sid:3000304; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection Body AND"; flow:established,to_server; content:"AND"; nocase; http_client_body; sid:3000305; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection Body OR"; flow:established,to_server; content:"OR"; nocase; http_client_body; sid:3000306; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection Body UNION"; flow:established,to_server; content:"UNION"; nocase; http_client_body; sid:3000307; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SQL Injection Body SELECT"; flow:established,to_server; content:"SELECT"; nocase; http_client_body; sid:3000308; rev:1;)

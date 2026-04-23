@@ -1,0 +1,4 @@
+# iframe HTML
+alert tcp any any -> $HOME_NET any (msg:"iframe HTML Injection URI"; content:"<iframe"; nocase; http_uri; sid:3000101; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"iframe HTML Injection Body-1"; content:"<iframe"; nocase; http_client_body; sid:3000102; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"iframe HTML Injection Body-2"; content:"%3ciframe"; nocase; http_client_body; sid:3000103; rev:1;)

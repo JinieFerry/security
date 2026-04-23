@@ -1,0 +1,15 @@
+# ICMP
+alert icmp any any -> $HOME_NET any (msg:"## ICMP Echo ##"; itype:8; sid:3000004; rev:1;)
+alert icmp $HOME_NET any -> any any (msg:"## ICMP Echo-Reply ##"; itype:0; sid:3000005; rev:1;)
+
+# FTP
+alert tcp any any -> $HOME_NET 21 (msg:"## FTP Request ##"; content:"USER"; sid:3000006; rev:1;)
+alert tcp $HOME_NET 21 -> any any (msg:"## FTP Response ##"; content:"ProFTPD"; sid:3000007; rev:1;)
+
+# TELNET
+alert tcp any any -> $HOME_NET 23 (msg:"## Telnet Request ##"; sid:3000008; rev:1;)
+alert tcp $HOME_NET 23 -> any any (msg:"## Telnet Response ##"; content:"login"; sid:3000009; rev:1;)
+
+# Web
+alert tcp any any -> $HOME_NET 80 (msg:"## HTTP Request ##"; sid:3000010; rev:1;)
+alert tcp $HOME_NET 80 -> any any (msg:"## HTTP Response ##"; sid:3000011; rev:1;)

@@ -1,0 +1,7 @@
+# OS Command Injection
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection URI \;"; flow:to_server,established; content:"%3b"; nocase; http_uri; sid:3000201; rev:1;) 
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection URI \/"; flow:to_server,established; content:"%2f"; nocase; http_uri; sid:3000202; rev:1;) 
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection URI \&&"; flow:to_server,established; content:"%26%26"; nocase; http_uri; sid:3000203; rev:1;) 
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection Body \;"; flow:to_server,established; content:"%3b"; nocase; http_client_body; sid:3000204; rev:1;) 
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection Body \/"; flow:to_server,established; content:"%2f"; nocase; http_client_body; sid:3000205; rev:1;) 
+alert tcp any any -> $HOME_NET any (msg:"OS Command Injection Body \&&"; flow:to_server,established; content:"%26%26"; nocase; http_client_body; sid:3000206; rev:1;)

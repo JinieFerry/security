@@ -1,0 +1,2 @@
+# type threshold
+alert icmp any any -> 192.168.20.205 any (msg:"ICMP-threshold"; threshold:type threshold, track by_dst, count 5, seconds 10; sid:3000101;)
